@@ -70,7 +70,7 @@ if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
                         <label for="comments">Comments: </label>
                     </div>
                     <div>
-                        <input type="text" name="comments" placeholder="Comments" maxlength="50">
+                        <textarea id="comments" name="comments" rows="6" cols="54" maxlength="500" placeholder="Please leave a review"></textarea>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
                 <button id="save" type="submit" name="save">Save</button>
             </div>
         </form>
-        <div id="numberOfLocations">Number of locations saved : <?= $counts ?></div>
+        <div id="count">Number of locations saved : <?= $counts ?></div>
     </div>
     <div id="menu">
         <ul>

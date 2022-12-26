@@ -1,14 +1,14 @@
 <?php
 include "_constants.php";
 
-function createFile() {
+function createFile(){
     global $DATA_FILE_PATH;
 
     $data_file = fopen($DATA_FILE_PATH, "a+");
     fclose($data_file);
 };
 
-function createDataArray() {
+function createDataArray(){
     global $DATA_FILE_PATH;
 
     // Make all data array w/ json_decode
@@ -26,13 +26,13 @@ function createDataArray() {
     return $data_arr;
 };
 
-function retrieveExistingDataString() {
+function retrieveExistingDataString(){
     $all_data = createDataArray();
     
     return json_encode($all_data);
 };
 
-function retrieveDataString() {
+function retrieveDataString(){
     $all_data = createDataArray();
     $new_data = ["location" => $_POST["location"], "address" => $_POST["address"], "id" => uniqid()];
     
@@ -41,7 +41,7 @@ function retrieveDataString() {
     return json_encode($all_data, JSON_PRETTY_PRINT);
 };
 
-function saveDataToFile() {
+function saveDataToFile(){
     global $DATA_FILE_PATH;
 
     $all_data_str = retrieveDataString();
